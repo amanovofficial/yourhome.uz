@@ -1,0 +1,362 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+/* header */
+
+header {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* header menu */
+header .menu {
+    background-color: rgba(17, 160, 141, 0.973);
+}
+
+header .menu .navbar-brand {
+    font-weight: 700;
+    font-size: 30px;
+    color: white;
+}
+
+.navbar-light .navbar-brand:focus,
+.navbar-light .navbar-brand:hover {
+    color: white;
+}
+
+header .menu .navbar-nav .nav-item .nav-link {
+    color: white;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+header .menu .navbar-nav .nav-item .nav-link:hover,
+header .menu .navbar-nav .nav-item.active .nav-link {
+    color: rgb(197, 197, 197);
+}
+
+/* header main */
+header .header_main h1 {
+    font-weight: 500;
+    font-size: 50px;
+    text-align: center;
+    margin: 50px 0;
+}
+
+header .header_main form {
+    display: flex;
+    justify-content: center;
+}
+
+/* notes */
+header .notes .card {
+    box-shadow: 0px 0px 10px darkgray;
+}
+
+header .notes .card-body {
+    justify-content: end;
+    align-content: end;
+    display: flex;
+    flex-direction: column;
+}
+
+header .notes .card .delete {
+    display: inline-block;
+    text-align: end;
+    color: red;
+}
+
+header .notes .card .delete:hover {
+    text-decoration: none;
+}
+
+header .forms_create .form_left .dropdown {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+
+header .forms_create .form_left .dropdown .btn {
+    width: 100%;
+}
+
+header .forms_create .form_left .dropdown .dropdown-menu {
+    min-width: 100%;
+}
+
+.dropdown-toggle::after {
+    margin-left: 17.255em;
+}
+
+header .forms_create .form_left .dropdown .btn {
+    font-size: 15px;
+    color: black;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 400;
+    color: gray;
+    margin-bottom: 5px;
+}
+
+
+header .forms_create .form_left .form-check-input {
+    margin-left: 0;
+}
+
+header .forms_create .form_left .form-check-label {
+    left: 40px;
+    position: absolute;
+}
+header .forms_create .form_left ul{
+    display: flex;
+    margin: 0;
+    justify-content: space-between;
+}
+header .forms_create .form_left ul li{
+    display: flex;
+    align-items: center;
+}
+header .forms_create .form_left ul li input{
+    margin-right: 5px;
+}
+
+header .forms_create .form_left ul li label{
+    margin: 0;
+}
+header .forms_create .form_left label.second{
+    margin-top: 41px;
+}
+header .forms_create button.nextbtn{
+    text-transform: uppercase;
+    border: 1px solid #28a745;
+    border-radius: 5px;
+    color: #28a745;
+    padding: .375rem .75rem;
+    background: transparent;
+}
+header .forms_create button.nextbtn:hover{
+    background-color: #28a745;
+    color: white;
+}
+header .forms_create .check_box{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* account */
+nav .nav-tabs a.nav-link{
+    padding: .5rem 200px;
+    text-transform: uppercase;
+}
+
+
+
+/* info */
+header .header_main .card ul li span{
+    font-weight: 500;
+
+}
+.carousel a{
+    background: rgb(0, 0, 0);
+    opacity: 0.1;
+}
+.carousel .carousel-indicators li{
+    background-color: white;
+
+    border-radius: 50%;
+    width: 13px;
+    height: 13px;
+}
+
+
+
+
+
+
+/* media */
+/* Md 768<991*/
+@media(max-width: 991px) {
+
+    /* add note */
+    .dropdown-toggle::after {
+        margin-left: 36.255em;
+
+    }
+
+/* info */
+
+    header .header_main .apple{
+        font-size: 40px;
+        }
+}
+
+/* Sm 576<767 */
+@media(max-width: 767px) {
+
+    /* add note */
+    .dropdown-toggle::after {
+        margin-left: 24.255em;
+    }
+
+/* info */
+
+    header .header_main .apple{
+        font-size: 38px;
+    }
+}
+
+
+
+
+/* ExSm */
+@media(max-width: 575px) {
+
+    /* header */
+    header .menu .navbar-brand {
+        font-size: 25px;
+    }
+
+    header .header_main h1 {
+        font-size: 25px;
+    }
+
+    .form-control {
+        width: 55%;
+        margin-right: 7px;
+        font-size: 13px;
+    }
+
+    form .btn {
+        padding: 4px 10px;
+        margin: 0;
+    }
+
+    form .btn {
+        font-size: 12px;
+    }
+
+    /* notes */
+    header .notes .card-title {
+        font-size: 15px;
+    }
+
+    header .notes .card-body span {
+        font-size: 14px;
+    }
+
+    header .notes .card-body .card-text {
+        font-size: 10px;
+    }
+
+    header .notes .card-body a {
+        font-size: 13px;
+    }
+
+    /* add note */
+    .dropdown-toggle::after {
+        margin-left: 9.255em;
+    }
+
+    .custom-file-label {
+        font-size: 10px;
+    }
+
+    .header_main h1.add {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+    header .forms_create .form_left label.second{
+        margin-top: 45px;
+    }
+
+    /* account */
+    nav .nav-tabs a.nav-link{
+        padding: .5rem 5%;
+    }
+    .form-control{
+        width: 95%;
+    }
+
+
+    /* info */
+    header .header_main .apple{
+        font-size: 21px;
+        margin: 35px 0;
+    }
+    header .header_main .card ul li{
+        font-size: 12px;
+    }
+}
+
+.card-action{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.customNavbar{
+    background-color: rgba(17, 160, 141, 0.973);
+    /* background-color: #3ED5A8 */
+    /* background-color: #56C9C6 */
+    /* background-color: #FA6E4D */
+
+
+}
+
+.customColor{
+    color: rgba(17, 160, 141, 0.973);
+}
+
+.customBGColor{
+    background-color: rgba(17, 160, 141, 0.973);
+    color:white
+}
+
+.alert{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color:red;
+    background-color: rgb(248, 144, 150);
+    border-radius: 10px;
+}
+
+.alertSuccess{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color:white;
+    background-color: rgb(131, 212, 162);
+    border-radius: 10px;
+}
+.hide{
+    display: none;
+}
+.mapPtr{
+   
+    border-radius: 15px;
+    background-color: rgba(17, 160, 141, 0.973);
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+}
+.Red{
+    background-color: tomato;
+}
+
+.Succes{
+    background-color: rgb(131, 212, 162);
+}

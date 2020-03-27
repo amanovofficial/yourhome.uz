@@ -1,0 +1,61 @@
+<div class="container notes">
+    <div class="row justify-content-center">
+        <div class="col-10 mt-3">
+            <div class="header_main">
+                <h1>Мои объявления</h1>
+                {{#if myBlurbs.length}}
+                {{#each myBlurbs}}
+                <div class="col-10 mt-3">
+                    <div class="header_main">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">{{region}} {{refPoint}} {{room}}/{{floor}}/{{numberOfStoreys}}
+                                </h5>
+                                <span>{{cost}} {{currency}}</span>
+                                <p class="date card-text">Добавлено в {{date}}</p>
+                                <div class="card-action">
+                                    <a class="customColor" href="/blurbs/blurb/{{ID}}" target="_blanc">Подробнее</a>
+                                    <form action="/blurbs/remove" method="POST">
+                                        <input type="hidden" name="ID" value="{{ID}}">
+
+                                        <button type="submit" class="btn btn-outline-danger">Удалить</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{/each}}
+                <div class="col-10 mt-3">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            {{#if prev}}
+                            <li class="page-item"><a class="page-link customColor" href="{{prev}}">Предыдущая</a></li>
+                            {{/if}}
+
+                            <li class="page-item"><span class="page-link customColor">Страница
+                                    {{current}}/{{totalPages}}</span>
+                            </li>
+
+                            {{#if next}}
+                            <li class="page-item"><a class="page-link customColor" href="{{next}}">Следующая</a></li>
+                            {{/if}}
+                        </ul>
+                    </nav>
+                </div>
+                {{else}}
+                <div class="col-10 mt-3 ">
+                    <div class="header_main">
+                        {{#if notFound}}
+                        <p>По данному поиску ничего не найдено</p>
+                        {{else}}
+                        <p>Ещё нет никаких объвлений</p>
+                        {{/if}}
+                    </div>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>

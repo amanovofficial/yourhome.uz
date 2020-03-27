@@ -1,0 +1,193 @@
+<div>
+    <button id="hideButton" style="width: 100%;" class="btn customBGColor"> Скрыть карту</button>
+</div>
+<div id="map" style="width: 100%;height:400px">
+</div>
+<header id="header">
+    <div class="container forms_create mb-5">
+        <div class="row justify-content-center">
+            <div class="col-10 mt-3">
+                <div class="header_main">
+                    <h1 class="add">Добавить объявления</h1>
+                </div>
+            </div>
+
+            <div class="col-lg-12 mt-3">
+                <div class="form_left">
+                    <form class=" form-row " action="/add" method="POST" enctype="multipart/form-data">
+
+
+                        <div class="placemark form-group col-md-10">
+                            <input type="hidden" name="latitude" type="text" id="latitude">
+                            <input type="hidden" name="longitude" type="text" id="longitude">
+                        </div>
+                        <div class="form-group col-md-5">
+                            <div class="custom-file">
+                                <input name="photoURL" multiple type="file" class="custom-file-input"
+                                    id="inputGroupFile02">
+                                <label class="custom-file-label" for="inputGroupFile02"
+                                    aria-describedby="inputGroupFileAddon02">Выберите одну или несколько
+                                    фотографии</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-5">
+                            <button type="button" id="mapToggle" style="width:100%;" class="btn Red"> <span
+                                    id="textbtn">Указать местоположение на карте</span></button>
+                        </div>
+
+                        <div class="form-group col-md-10">
+                            <label for="region">Выберите район</label>
+                            <select name="region" required id="region" class="form-control">
+                                <option value="Алмазарский район">Алмазарский район</option>
+                                <option value="Бектимирский район">Бектимирский район</option>
+                                <option value="Мирабадский район">Мирабадский район</option>
+                                <option value="Мирзо-Улугбекский район">Мирзо-Улугбекский район</option>
+                                <option value="Сергелийский район">Сергелийский район</option>
+                                <option value="Учтепинский район">Учтепинский район</option>
+                                <option value="Чиланзарский район">Чиланзарский район</option>
+                                <option value="Шайхантахурский район">Шайхантахурский район</option>
+                                <option value="Юнусабадский район">Юнусабадский район</option>
+                                <option value="Яккасарайский район">Яккасарайский район</option>
+                                <option value="Яшнабадский район">Яшнабадский район</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group col-md-5">
+                            <label for="refPoint">Ориентир</label>
+                            <input name="refPoint" required type="text" class="form-control" id="refPoint">
+                        </div>
+                        <div class="form-group col-md-5">
+                            <label for="room">Количество комнат</label>
+                            <input name="room" required type="number" class="form-control" id="room">
+                        </div>
+
+                        <div class="form-group col-md-5">
+                            <label for="floor">Этаж</label>
+                            <input name="floor" required type="number" class="form-control" id="floor" min="1">
+                        </div>
+                        <div class="form-group col-md-5">
+                            <label for="numberOfStoreys">Этажность</label>
+                            <input name="numberOfStoreys" required type="number" class="form-control"
+                                id="numberOfStoreys" min="1">
+                        </div>
+
+                        <div class="form-group col-md-5">
+                            <label for="cost">Цена</label>
+                            <input name="cost" required type="number" class="form-control" id="cost">
+                        </div>
+
+                        <div class="form-group col-md-5">
+                            <label for="currency">Валюта</label>
+                            <select name="currency" required id="currency" class="form-control">
+                                <option selected>у.е</option>
+                                <option>Сум</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-5">
+                            <label for="typePlanRooms">Тип планировки комнат</label>
+                            <select name="typePlanRooms" required id="typePlanRooms" class="form-control">
+                                <option selected value="Раздельный">Раздельный</option>
+                                <option value="Смежный">Смежный</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-5">
+                            <label for="typePlanLavatory">Тип планировки санузла</label>
+                            <select name="typePlanLavatory" required id="typePlanLavatory" class="form-control">
+                                <option value="Раздельный">Раздельный</option>
+                                <option value="Совмещенный">Совмещенный</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-10">
+                            <label for="isStudent">Сдаётся</label>
+                            <select name="isStudent" required id="isStudent" class="form-control">
+                                <option value="Студентам">Студентам</option>
+                                <option value="Семейным">Семейным</option>
+                                <option value="Военным">Военным</option>
+                                <option value="Семейным, можно и студенты">Семейным, можно и студенты</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-10">
+                            <label for="">
+                                <h4>В квартире имеется</h4>
+                            </label>
+
+                        </div>
+
+                        <div class="form-group col-md-5">
+                            <ul style="display: flex; flex-direction: column;">
+                                <li>
+                                    <input name="conditioner" type="checkbox" id="conditioner">
+                                    <label for="conditioner">Кондиционер</label>
+                                </li>
+                                <li>
+                                    <input name="washMachine" type="checkbox" id="washMachine">
+                                    <label for="washMachine">Стиральная машина</label>
+                                </li>
+                                <li>
+                                    <input name="furniture" type="checkbox" id="furniture">
+                                    <label for="furniture">Мебель</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="form-group col-md-5">
+                            <ul style="display: flex; flex-direction: column;">
+                                <li>
+                                    <input name="microwaveOven" type="checkbox" id="microwaveOven">
+                                    <label for="microwaveOven">Микроволновка</label>
+                                </li>
+                                <li>
+                                    <input name="internet" type="checkbox" id="internet">
+                                    <label for="internet">Интернет</label>
+                                </li>
+                                <li>
+                                    <input name="tv" type="checkbox" id="tv">
+                                    <label for="tv">Телевизор</label>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="form-group col-md-10">
+                            <label for="commission">Комиссионная</label>
+                            <input name="commission" required type="number" class="form-control" id="commission"
+                                placeholder="Процент от соимости аренды" min="0" max="100" value="0">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <ul style="display: flex; flex-direction: column;">
+                                <li>
+                                    <input name="registration" type="checkbox" id="registration">
+                                    <label for="registration">Временная прописка</label>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="form-group col-md-10">
+                            <label for="additionalInfo">Дополнительная информация</label>
+                            <textarea name="additionalInfo" class="form-control" id="additionalInfo"
+                                placeholder="Дополнительные контакты, телеграм, описание и т.д"></textarea>
+                        </div>
+
+                        <div class="form-group col-md-5">
+                            <label for="name">Имя</label>
+                            <input name="name" required type="text" class="form-control" id="name">
+                        </div>
+
+                        <div class="form-group col-md-5">
+                            <label for="telephone">Номер телефона</label>
+                            <input name="telephone" required type="text" class="form-control" id="telephone">
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <button type="submit" class="btn customBGColor">Далее</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+</header>

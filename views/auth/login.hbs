@@ -1,0 +1,83 @@
+<header>
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist" style="align-items:center; justify-content:center">
+            <a class="nav-item nav-link active customColor" id="nav-home-tab" data-toggle="tab" href="#login" role="tab"
+                aria-controls="nav-home" aria-selected="true">Войти</a>
+            <a class="nav-item nav-link customColor" id="nav-profile-tab" data-toggle="tab" href="#registration"
+                role="tab" aria-controls="nav-profile" aria-selected="false">Зарегистрироваться</a>
+        </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="header_main">
+                            {{#if loginError}}
+                            <div class="alert"> {{loginError}} </div>
+                            {{/if}}
+
+                            {{#if Correct}}
+                            <div class="alertSuccess"> {{Correct}} </div>
+                            {{/if}}
+                            <h1>Войти в аккаунт</h1>
+                        </div>
+                    </div>
+                    <div class="col-sm-8 col-12">
+                        <form action="/auth/login" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="tNumber" class="form-control" id="exampleInputText"
+                                    aria-describedby="textHelp" placeholder="Введите номер вашего телефона" required>
+                            </div>
+                            <div class="form-group">
+                                <input name="password" type="password" type="password" class="form-control"
+                                    id="exampleInputPassword1" placeholder="Введите пароль" required>
+                            </div>
+                            <button type="submit" class="btn customBGColor">Войти</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="registration" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="header_main">
+                            {{#if regError}}
+                            <div class="alert">{{regError}}</div>
+                            {{/if}}
+
+                            {{#if Incorrect}}
+                            <div class="alert">{{Incorrect}}</div>
+                            {{/if}}
+                            <h1>Регистрация</h1>
+                        </div>
+                    </div>
+                    <div class="col-sm-8 col-12">
+                        <form action="/auth/registration" method="POST">
+                            <div name="name" class="form-group">
+                                <input name="name" type="text" class="form-control" id="exampleInputText12"
+                                    aria-describedby="textHelp" placeholder="Ваше Имя" required>
+                            </div>
+                            <div class="form-group">
+                                <input name="tNumber" type="text" class="form-control" id="exampleInputText1"
+                                    aria-describedby="textHelp" placeholder="Введите номер вашего телефона" required>
+                            </div>
+                            <div class="form-group">
+                                <input name="password" type="password" class="form-control" id="exampleInputPassword11"
+                                    placeholder="Введите пароль" required>
+                            </div>
+                            <div class="form-group">
+                                <input name="repeatPassword" type="password" class="form-control"
+                                    id="exampleInputPassword12" placeholder="Подтвердите пароль" required>
+                            </div>
+                            <button type="submit" class="btn  customBGColor">Создать аккаунт</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</header>
