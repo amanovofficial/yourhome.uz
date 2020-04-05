@@ -177,7 +177,9 @@ header .header_main .card ul li span{
     height: 13px;
 }
 
-
+.card{
+    border-radius: 10px;
+}
 
 
 
