@@ -12,3 +12,32 @@ document.querySelectorAll('.date').forEach(item => {
     item.innerHTML = `<li class="date"><strong>Добавлено в:</strong>  ${toDate(item.textContent)}</li>`
 })
 
+const mapToggle = document.querySelector('#mapToggle');
+if(mapToggle){
+    mapToggle.addEventListener('click', () => {
+        let map = document.querySelector('#map')
+        let hideButton = document.querySelector('#hideButton')
+    
+        if (map.classList.contains('hide')) {
+            map.classList.remove('hide')
+            hideButton.classList.remove('hide')
+        }
+    })
+}
+
+ 
+const hideButton = document.querySelector('#hideButton')
+if(hideButton){
+    hideButton.addEventListener('click', () => {
+
+        let hideButton = document.querySelector('#hideButton')
+        let map = document.querySelector('#map')
+    
+        if (!hideButton.classList.contains('hide')) {
+            hideButton.classList.add('hide')
+        }
+        if (!map.classList.contains('hide')) {
+            map.classList.add('hide')
+        }
+    })
+}

@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.3",
     "bcryptjs": "^2.4.3",
     "compression": "^1.7.4",
     "connect-flash": "^0.1.1",
@@ -19,6 +20,7 @@
     "express-jwt": "^5.3.1",
     "express-session": "^1.17.0",
     "express-validator": "^6.3.1",
+    "handlebars": "^4.7.6",
     "helmet": "^3.21.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.8.7",

@@ -30,25 +30,3 @@ DG.then(function () {
     });
 });
 
-document.querySelector('#mapToggle').addEventListener('click', () => {
-    let map = document.querySelector('#map')
-    let hideButton = document.querySelector('#hideButton')
-
-    if (map.classList.contains('hide')) {
-        map.classList.remove('hide')
-        hideButton.classList.remove('hide')
-    }
-})
-
-document.querySelector('#hideButton').addEventListener('click', () => {
-
-    let hideButton = document.querySelector('#hideButton')
-    let map = document.querySelector('#map')
-
-    if (!hideButton.classList.contains('hide')) {
-        hideButton.classList.add('hide')
-    }
-    if (!map.classList.contains('hide')) {
-        map.classList.add('hide')
-    }
-})

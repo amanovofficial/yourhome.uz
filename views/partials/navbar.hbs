@@ -20,24 +20,24 @@
                 {{/if}}
 
                 {{#if isBlurbs}}
-                <li class="nav-item active"><a class="nav-link" href="/blurbs/1">Объявления</a></li>
+                <li class="nav-item active"><a class="nav-link" href="/blurbs?page=1">Объявления</a></li>
 
                 {{else}}
-                <li class="nav-item"><a class="nav-link" href="/blurbs/1">Объявления</a></li>
+                <li class="nav-item"><a class="nav-link" href="/blurbs?page=1">Объявления</a></li>
                 {{/if}}
 
                 {{#if isAuth}}
 
                 {{#if isMyBlurbs}}
-                <li class="nav-item active"><a class="nav-link" href="/blurbs/myBlurbs/1">Мои объявления</a></li>
+                <li class="nav-item active"><a class="nav-link" href="/blurbs/myBlurbs?page=1">Мои объявления</a></li>
                 {{else}}
-                <li class="nav-item"><a class="nav-link" href="/blurbs/myBlurbs/1">Мои объявления</a></li>
+                <li class="nav-item"><a class="nav-link" href="/blurbs/myBlurbs?page=1">Мои объявления</a></li>
                 {{/if}}
 
                 {{#if isAdd}}
-                <li class="nav-item active"><a class="nav-link" href="/add">Добавить объявления</a></li>
+                <li class="nav-item active"><a class="nav-link" href="/blurbs/create">Добавить объявление</a></li>
                 {{else}}
-                <li class="nav-item"><a class="nav-link" href="/add">Добавить объявления</a></li>
+                <li class="nav-item"><a class="nav-link" href="/blurbs/create">Добавить объявление</a></li>
                 {{/if}}
 
                 <li class="nav-item"><a class="nav-link" href="/auth/logout">Выйти</a></li>

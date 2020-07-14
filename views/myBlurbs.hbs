@@ -3,7 +3,7 @@
         <div class="col-10 mt-3">
             <div class="header_main">
                 <h1>Мои объявления</h1>
-                {{#if myBlurbs.length}}
+            {{#if myBlurbs.length}}
                 {{#each myBlurbs}}
                 <div class="col-10 mt-3">
                     <div class="header_main">
@@ -14,10 +14,8 @@
                                 <span>{{cost}} {{currency}}</span>
                                 <p class="date card-text">Добавлено в {{date}}</p>
                                 <div class="card-action">
-                                    <a class="customColor" href="/blurbs/blurb/{{ID}}" target="_blanc">Подробнее</a>
-                                    <form action="/blurbs/remove" method="POST">
-                                        <input type="hidden" name="ID" value="{{ID}}">
-
+                                    <a class="customColor" href="/blurbs/detail?ID={{ID}}" target="_blanc">Подробнее</a>
+                                    <form action="/blurbs/remove/{{ID}}" >
                                         <button type="submit" class="btn btn-outline-danger">Удалить</button>
                                     </form>
                                 </div>
@@ -31,7 +29,8 @@
                     <nav aria-label="Page navigation example">
                         <ul class="pagination">
                             {{#if prev}}
-                            <li class="page-item"><a class="page-link customColor" href="{{prev}}">Предыдущая</a></li>
+                            <li class="page-item"><a class="page-link customColor" 
+                                href="/blurbs/myblurbs?page={{prev}}">Предыдущая</a></li>
                             {{/if}}
 
                             <li class="page-item"><span class="page-link customColor">Страница
@@ -39,12 +38,13 @@
                             </li>
 
                             {{#if next}}
-                            <li class="page-item"><a class="page-link customColor" href="{{next}}">Следующая</a></li>
+                            <li class="page-item"><a class="page-link customColor" 
+                                href="/blurbs/myblurbs?page={{next}}">Следующая</a></li>
                             {{/if}}
                         </ul>
                     </nav>
                 </div>
-                {{else}}
+            {{else}}
                 <div class="col-10 mt-3 ">
                     <div class="header_main">
                         {{#if notFound}}
@@ -54,7 +54,7 @@
                         {{/if}}
                     </div>
                 </div>
-                {{/if}}
+            {{/if}}
             </div>
         </div>
     </div>

@@ -4,13 +4,13 @@
             <div class="header_main">
                 <h1>Объявления</h1>
                 <div class="mapPtr">
-                    <a class="mapPtr" href="/map/blurbs" >Показать на карте</a>
+                    <a class="mapPtr" href="/blurbs/map" >Показать на карте</a>
                 </div>
             </div>
         </div>
 
         {{#if blurbs.length}}
-        <form action="/blurbs/1" method="GET" class="form-inline my-2 my-lg-0">
+        <form action="/blurbs" method="GET" class="form-inline my-2 my-lg-0">
            <input name="search" value="{{searchQuery}}" class="form-control mr-sm-2" type="search" placeholder="Поиск"
                 aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0 customBGColor" type="submit"><i class="fa fa-search"
@@ -25,7 +25,7 @@
                         <h5 class="card-title">{{region}} {{refPoint}} {{room}}/{{floor}}/{{numberOfStoreys}}</h5>
                         <span>{{cost}} {{currency}}</span>
                         <p class="card-text date">Добавлено в {{date}}</p>
-                        <a class="customColor" href="/blurbs/blurb/{{ID}}" target="_blanc">Подробнее</a>
+                        <a class="customColor" href="/blurbs/detail?ID={{ID}}" target="_blanc">Подробнее</a>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
                     {{#if prev}}
-                    <li class="page-item customColor"><a class="page-link customColor" href="{{prev}}">Предыдущая</a>
+                    <li class="page-item customColor"><a class="page-link customColor" href="/blurbs?page={{prev}}">Предыдущая</a>
                     </li>
                     {{/if}}
 
@@ -44,7 +44,7 @@
                     </li>
 
                     {{#if next}}
-                    <li class="page-item customColor"><a class="page-link customColor" href="{{next}}">Следующая</a>
+                    <li class="page-item customColor"><a class="page-link customColor" href="/blurbs?page={{next}}">Следующая</a>
                     </li>
                     {{/if}}
                 </ul>

@@ -1,11 +1,7 @@
+const controllers = require('../controllers/index')
 const {Router}=require('express')
 const router=Router();
 
-router.get('/',(req,res)=>{
-    res.render('index',{
-        isIndex:true,
-        title:'Главная страница'
-    })
-})
+router.get('/',controllers.getIndexPage)
 
 module.exports=router

@@ -6,7 +6,7 @@ DG.then(function () {
         zoom: 13
     });
 
-    const url = '/map/getCoords';
+    const url = '/blurbs?asynchronicQuery=true';
     fetch(url)
         .then((response) => {
             return response.json()
