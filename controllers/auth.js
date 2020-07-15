@@ -22,7 +22,7 @@ module.exports.register = async function(req,res){
             const user = { name, tNumber, password };
             await client.verify.services.create({ friendlyName: 'yourhome.uz' })
 
-            await client.verify.services('VA6c887e614418218298a7b34477cbabc0')
+            await client.verify.services(keys.TWILIO_VERIFY_SID)
                 .verifications
                 .create({ to: tNumber, channel: 'sms' })
 
@@ -79,7 +79,7 @@ module.exports.login = async function(req,res){
         const candidate = await User.findOne({ tNumber })
 
         if (candidate) {
-            const isValid =(password===candidate.password) //await bcrypt.compare(password, candidate.password)
+            const isValid = await bcrypt.compare(password, candidate.password)
             if (isValid) {
                 req.session.user = candidate;
                 req.session.isAuthenticated = true;
