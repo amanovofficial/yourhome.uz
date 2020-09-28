@@ -15,6 +15,7 @@ const indexRouts = require('./routes/indexRoutes')
 const blurbsRouts = require('./routes/blurbs');
 const authRouts=require('./routes/auth')
 const fileMiddleware=require('./midleware/file')
+console.log(process.env);
 const keys=require('./keys')
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -68,5 +69,4 @@ async function start() {
 }
 
 start();
-
 
