@@ -7,9 +7,9 @@ services:
       - NODE_ENV=production
       - SESSION_SECRET=123456789asdfghjkl
       - MONGODB_URI=mongodb://mongo:27017/yourhome
-      - TWILIO_SID=ACd9fc3bdf5cc4e21f83f5e91165753a79
-      - TWILIO_TOKEN=86f93b866f9843a26707fbdecbb00a33
-      - TWILIO_VERIFY_SID=VA0eb85ae0ff139011bd0e409be2b8ad06
+      - TWILIO_SID=AC4a8834baf2190c908599b323852fddb8
+      - TWILIO_TOKEN=c8c69ad46669875367e675c957db7384
+      - TWILIO_VERIFY_SID=VA352d413227e512067b715cd3ae9230e8
     ports:
     - "3000:3000"
     depends_on:
